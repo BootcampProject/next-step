@@ -1,0 +1,85 @@
+:root {
+    --dark: #353535;
+    --light: #ffff;
+    --blu: #d2d7df;
+    --lightb: #bdbbb0;
+    --darkb: #8a897c;
+}
+
+.navBarContainer {
+    background-color: var(--blu);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.navBarLogo {
+    margin-left: 2%;
+}
+
+.navSearchBar {
+    float: right;
+}
+
+.sloganContainer {
+    background-color: #d2d7df;
+}
+
+
+
+/* --------- SideBar Nav Styling From here down --------- */
+
+/* .navBarContainerTwo {
+    background-color: var(--blu);
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    transition: width .4s ease-in;
+}
+
+.navBarContainerTwo.inactive {
+    width: 100px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.topSection {
+    position: relative;
+}
+
+.logo {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.backArrow {
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    cursor: pointer;
+}
+
+.navBarContainerTwo.inactive .topSection .backArrow {
+    right: -50px;
+    transform: rotate(180deg);
+    transition: width .4s ease-in;
+}
+
+.search-btn {
+    position: absolute;
+    background: transparent;
+    border: 0;
+    font-size: 20px;
+    top: 10.5%;
+    left: 9%;
+}
+
+.navBarContainerTwo.inactive .searchController .search-btn {
+    top: 10.5%;
+    left: 24%;
+} */
