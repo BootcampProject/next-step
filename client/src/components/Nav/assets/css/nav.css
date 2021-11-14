@@ -1,0 +1,27 @@
+:root {
+    --dark: #353535;
+    --light: #ffff;
+    --blu: #d2d7df;
+    --lightb: #bdbbb0;
+    --darkb: #8a897c;
+}
+
+.navBarContainer {
+    background-color: var(--blu);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.navBarLogo {
+    margin-left: 2%;
+}
+
+.navSearchBar {
+    float: right;
+}
+
+.sloganContainer {
+    background-color: #d2d7df;
+}
