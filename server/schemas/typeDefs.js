@@ -10,7 +10,6 @@ const typeDefs = gql`
     _id: ID
     question: String
     answer: String
-    image: String
     category: Category
   }
 
@@ -28,7 +27,7 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    questions(category: ID, name: String): [Questions]
+    Questions(category: ID, name: String): [Questions]
     user: User
   }
 

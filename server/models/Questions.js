@@ -11,9 +11,6 @@ const questionSchema = new Schema({
   answer: {
     type: String
   },
-  image: {
-    type: String
-  },
   category: {
     type: Schema.Types.ObjectId,
     ref: 'Category',
