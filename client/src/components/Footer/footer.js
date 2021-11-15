@@ -12,7 +12,7 @@ function Footer () {
                     <Col sm={4}> <ContactForm /> </Col>
                     <Col class="footerLinks">
                         <Nav className="flex-column text-center">
-                            <Nav.Link href="/home">About Us</Nav.Link>
+                            <Nav.Link href="/aboutus">About Us</Nav.Link>
                         </Nav>
                     </Col>
                 </Row>

@@ -1,11 +1,11 @@
 import React, { createContext, useContext } from "react";
-import { useProductReducer } from './reducers'
+import { useQuestionReducer } from './reducers'
 
-const StoreContext = createContext();
-const { Provider } = StoreContext;
+const QuestionContext = createContext();
+const { Provider } = QuestionContext;
 
-const quizQuestions = ({ value = [], ...props }) => {
-  const [state, dispatch] = useProductReducer({
+const QuizQuestions = ({ value = [], ...props }) => {
+  const [state, dispatch] = useQuestionReducer({
     questions: [],
     categories: [],
     currentCategory: '',
@@ -18,4 +18,4 @@ const useQuestionContext = () => {
   return useContext(QuestionContext);
 };
 
-export { quizQuestions, useQuestionContext };
+export { QuizQuestions, useQuestionContext };
