@@ -1,22 +1,95 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import { useQuestionContext } from '../../utils/GlobalState';
+import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
+import { QUERY_CATEGORIES } from '../../utils/queries';
+import { idbPromise } from '../../utils/helpers';
+
 import logoImage from './assets/images/Logo.png';
-import { Navbar,Nav,Container,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
-import { BsSearch } from 'react-icons/bs';
+import { Navbar,Nav,Container } from 'react-bootstrap';
+import { BsPersonPlusFill,BsPersonCheckFill } from 'react-icons/bs'; 
 import logoGif from '../Header/assets/images/Ed-El-Ex-V2.gif';
 import './assets/css/nav.css';
+import Auth from "../../utils/auth";
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-
+import {Link} from "react-router-dom";
 
 function NavBar() {
+    const [state, dispatch] = useQuestionContext();
 
-        return (
-            <Router>
+    const { categories } = state;
+
+    const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+
+    useEffect(() => {
+        if (categoryData) {
+        dispatch({
+            type: UPDATE_CATEGORIES,
+            categories: categoryData.categories
+        });
+        categoryData.categories.forEach(category => {
+            idbPromise('categories', 'put', category);
+        });
+        } else if (!loading) {
+        idbPromise('categories', 'get').then(categories => {
+            dispatch({
+            type: UPDATE_CATEGORIES,
+            categories: categories
+            });
+        });
+        }
+    }, [categoryData, loading, dispatch]);
+
+    const handleClick = id => {
+        dispatch({
+        type: UPDATE_CURRENT_CATEGORY,
+        currentCategory: id
+        });
+    };
+
+
+    function showNavigation() {
+        if (Auth.loggedIn()) {
+          return (
+              <div>
+                    <div class="navBarContainer">
+                        <Navbar expand="lg">
+                            <Container fluid>
+                                <div class="navBarLogo">
+                                    <Navbar.Brand as={ Link } to={"/"}><img src={logoImage} className="d-inline-block align-top" width="60" height="60" alt="Home" /></Navbar.Brand>
+                                </div>
+                                <Navbar.Toggle aria-controls="navbarScroll" />
+                                <Navbar.Collapse id="navbarScroll">
+                                    <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '200px' }} navbarScroll>
+                                        {categories.map(item => (
+                                            <Nav.Link 
+                                            key={item._id}
+                                            onClick={() => {
+                                              handleClick(item._id);
+                                            }}>
+                                                {item.name}
+                                            </Nav.Link>
+                                        ))}
+                                    </Nav>
+                                    <Nav>
+                                        <Nav.Link>
+                                            <a href="/" onClick={() => Auth.logout()}>
+                                                Logout
+                                            </a>
+                                        </Nav.Link>
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </Container>
+                        </Navbar>
+                    </div>
+                    <div class="sloganContainer">
+                        <img src={logoGif} style={{ maxHeight: '30px' }}/>
+                    </div>
+              </div>
+          );
+        } else {
+          return (
+            <div>
                 <div class="navBarContainer">
                     <Navbar expand="lg">
                         <Container fluid>
@@ -26,26 +99,20 @@ function NavBar() {
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">
                                 <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '200px' }} navbarScroll>
-                                    <Nav.Link as={ Link } to={"/about"}>Item 1</Nav.Link>
-                                    <Nav.Link as={ Link } to={"/about"}>Item 2</Nav.Link>
-
-                                    <NavDropdown title="Item 3" id="navbarScrollingDropdown">
-                                        <NavDropdown.Item as={ Link } to={"/resume"}>Action</NavDropdown.Item>
-                                        <NavDropdown.Item as={ Link } to={"/resume"}>Another action</NavDropdown.Item>
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item as={ Link } to={"/resume"}>Something else here</NavDropdown.Item>
-                                    </NavDropdown>
+                                    {categories.map(item => (
+                                        <Nav.Link 
+                                        key={item._id}
+                                        onClick={() => {
+                                            handleClick(item._id);
+                                        }}>
+                                            {item.name}
+                                        </Nav.Link>
+                                    ))}
                                 </Nav>
-                                <Form className="d-flex">
-                                    
-                                    <FormControl
-                                    type="search"
-                                    placeholder="Search"
-                                    className="me-2"
-                                    aria-label="Search"
-                                    />
-                                    <Button variant="outline-secondary"><BsSearch/></Button>
-                                </Form>
+                                <Nav>
+                                    <Link to="/signup"> <BsPersonPlusFill /> Signup</Link>
+                                    <Link to="/login"> <BsPersonCheckFill /> Login</Link>
+                                </Nav>
                             </Navbar.Collapse>
                         </Container>
                     </Navbar>
@@ -53,23 +120,15 @@ function NavBar() {
                 <div class="sloganContainer">
                     <img src={logoGif} style={{ maxHeight: '30px' }}/>
                 </div>
-                {/* <div>
-                    <Switch>
-                        <Route path="/about">
-                            <About />
-                        </Route>
-                        <Route path="/portfolio">
-                            <Portfolio />
-                        </Route>
-                        <Route path="/resume">
-                            <Resume />
-                        </Route>
-                        <Route path="/contact">
-                            <Contact />
-                        </Route>
-                    </Switch>
-                </div> */}
-            </Router>
-        );
+            </div>
+          );
+        }
+      }
+
+    return (
+        <div>
+            {showNavigation()}
+        </div>
+    );
 }
 export default NavBar;
