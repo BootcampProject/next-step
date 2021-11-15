@@ -15,7 +15,6 @@ function App() {
   return (
     <div>
       <NavBar />
-      {/* <Header /> */}
       <main>
 
       </main>
