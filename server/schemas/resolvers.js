@@ -7,7 +7,7 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    questions: async (parent, { category, question }) => {
+    Questions: async (parent, { category, question }) => {
       const params = {};
 
       if (category) {
@@ -22,9 +22,7 @@ const resolvers = {
 
       return await Questions.find(params).populate('category');
     },
-    Questions: async (parent, { _id }) => {
-      return await Questions.findById(_id).populate('category');
-    },
+   
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({

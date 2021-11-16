@@ -12,7 +12,7 @@ import logoGif from '../Header/assets/images/Ed-El-Ex-V2.gif';
 import './assets/css/nav.css';
 import Auth from "../../utils/auth";
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavBar() {
     const [state, dispatch] = useQuestionContext();
@@ -83,7 +83,7 @@ function NavBar() {
                         </Navbar>
                     </div>
                     <div class="sloganContainer">
-                        <img src={logoGif} style={{ maxHeight: '30px' }}/>
+                        <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
                     </div>
               </div>
           );
@@ -118,7 +118,7 @@ function NavBar() {
                     </Navbar>
                 </div>
                 <div class="sloganContainer">
-                    <img src={logoGif} style={{ maxHeight: '30px' }}/>
+                    <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
                 </div>
             </div>
           );

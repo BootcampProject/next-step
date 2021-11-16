@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar,Nav,Container,Row,Col } from 'react-bootstrap';
+import { Nav,Container,Row,Col } from 'react-bootstrap';
 import ContactForm from '../ContactUs/contact';
 import './assets/footer.css';
 
@@ -12,14 +12,11 @@ function Footer () {
                     <Col sm={4}> <ContactForm /> </Col>
                     <Col class="footerLinks">
                         <Nav className="flex-column text-center">
-                            <Nav.Link href="/home">Active</Nav.Link>
-                            <Nav.Link eventKey="link-1">Link</Nav.Link>
-                            <Nav.Link eventKey="link-2">Link</Nav.Link>
+                            <Nav.Link href="/aboutus">About Us</Nav.Link>
                         </Nav>
                     </Col>
                 </Row>
-            </Container>
-            
+            </Container>    
         </div>
     )
 

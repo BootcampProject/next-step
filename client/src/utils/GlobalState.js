@@ -1,11 +1,11 @@
 import React, { createContext, useContext } from "react";
-import { useProductReducer } from './reducers'
+import { useQuestionReducer } from './reducers'
 
 const QuestionContext = createContext();
 const { Provider } = QuestionContext;
 
 const QuizQuestions = ({ value = [], ...props }) => {
-  const [state, dispatch] = useProductReducer({
+  const [state, dispatch] = useQuestionReducer({
     questions: [],
     categories: [],
     currentCategory: '',

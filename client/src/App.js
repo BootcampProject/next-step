@@ -1,26 +1,49 @@
-import React from "react";
+import React from 'react';
 import NavBar from './components/Nav/nav';
-import Header from './components/Header/header'
 import Footer from './components/Footer/footer';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { QuizQuestions } from "./utils/GlobalState";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import { BsSearch } from 'react-icons/bs';
+
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+
+import Home from "./pages/Home";
+import Detail from "./pages/Details";
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+
+const client = new ApolloClient({
+  request: (operation) => {
+    const token = localStorage.getQuestion('id_token')
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    })
+  },
+  uri: '/graphql',
+})
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <main>
-
-      </main>
-      <Footer />
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <QuizQuestions>
+              <NavBar />
+                <Switch>
+                  {/* <Route exact path="/" component={Home} /> */}
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/signup" component={Signup} />
+                  <Route exact path="/questions/:id" component={Detail} />
+                </Switch>
+              <Footer />
+          </QuizQuestions>
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
