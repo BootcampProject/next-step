@@ -1,0 +1,21 @@
+:root {
+    --dark: #353535;
+    --light: #ffff;
+    --blu: #d2d7df;
+    --lightb: #bdbbb0;
+    --darkb: #8a897c;
+}
+
+.footerNavbarBackground {
+    background-color: var(--blu);
+    position:absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left:0;
+    bottom:-400px;
+    right:0;
+}
+
+.footerLinks {
+    float: right;
+}
