@@ -83,9 +83,6 @@ function NavBar() {
                             </Container>
                         </Navbar>
                     </div>
-                    <div className="sloganContainer">
-                        <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
-                    </div>
               </div>
           );
         } else {
@@ -117,9 +114,6 @@ function NavBar() {
                             </Navbar.Collapse>
                         </Container>
                     </Navbar>
-                </div>
-                <div className="sloganContainer">
-                    <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
                 </div>
             </div>
           );
