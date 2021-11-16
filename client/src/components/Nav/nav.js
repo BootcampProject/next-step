@@ -110,8 +110,8 @@ function NavBar() {
                                     ))}
                                 </Nav>
                                 <Nav>
-                                    <Link to="/signup"> <BsPersonPlusFill /> Signup</Link>
-                                    <Link to="/login"> <BsPersonCheckFill /> Login</Link>
+                                    <Nav.Link><Link to="/signup"> <BsPersonPlusFill /> Signup</Link></Nav.Link>
+                                    <Nav.Link><Link to="/login"> <BsPersonCheckFill /> Login</Link></Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>

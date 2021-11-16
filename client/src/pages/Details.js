@@ -4,6 +4,8 @@ import { useQuery } from '@apollo/react-hooks';
 
 import { useQuestionContext } from "../utils/GlobalState";
 import {UPDATE_QUESTIONS} from "../utils/actions";
+import { QUERY_QUESTIONS } from "../utils/queries";
+
 import { idbPromise } from "../utils/helpers";
 
 function Detail() {
@@ -12,9 +14,9 @@ function Detail() {
 
   const [currentQuestion, setCurrentQuestion] = useState({});
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_QUESTIONS);
 
-  const { questions} = state;
+  const { questions } = state;
 
   useEffect(() => {
     // already in global store
@@ -37,11 +39,11 @@ function Detail() {
       idbPromise('questions', 'get').then((indexedQuestions) => {
         dispatch({
           type: UPDATE_QUESTIONS,
-          products: indexedQuestions
+          questions: indexedQuestions
         });
       });
     }
-  }, [products, data, loading, dispatch, id]);
+  }, [questions, data, loading, dispatch, id]);
 
 
   return (
