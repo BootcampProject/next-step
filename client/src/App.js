@@ -30,18 +30,20 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
-          <QuizQuestions>
-              <NavBar />
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/signup" component={Signup} />
-                  <Route exact path="/questions/:id" component={Detail} />
-                </Switch>
-              <Footer />
-          </QuizQuestions>
-        </div>
+    
+        <QuizQuestions>
+            <NavBar />
+            <main>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/questions/:id" component={Detail} />
+              </Switch>
+            </main>
+            <Footer />
+        </QuizQuestions>
+        
       </Router>
     </ApolloProvider>
   );

@@ -26,6 +26,11 @@
     background-color: #d2d7df;
 }
 
+.typewriterContainer {
+    text-align: center;
+    background-color: var(--blu);
+}
+
 
 
 /* --------- SideBar Nav Styling From here down --------- */

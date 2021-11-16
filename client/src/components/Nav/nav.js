@@ -8,7 +8,7 @@ import { idbPromise } from '../../utils/helpers';
 import logoImage from './assets/images/Logo.png';
 import { Navbar,Nav,Container } from 'react-bootstrap';
 import { BsPersonPlusFill,BsPersonCheckFill } from 'react-icons/bs'; 
-import logoGif from '../Header/assets/images/Ed-El-Ex-V2.gif';
+import Typewriter from 'typewriter-effect';
 import './assets/css/nav.css';
 import Auth from "../../utils/auth";
 
@@ -82,8 +82,16 @@ function NavBar() {
                             </Container>
                         </Navbar>
                     </div>
-                    <div class="sloganContainer">
-                        <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
+                    <div class="typewriterContainer">
+                        <h2>
+                            <Typewriter 
+                                options={{
+                                    strings: ['Educate. Elevate. Excel.'],
+                                    autoStart: true,
+                                    loop: true,
+                                }}                
+                            />
+                        </h2>
                     </div>
               </div>
           );
@@ -117,8 +125,16 @@ function NavBar() {
                         </Container>
                     </Navbar>
                 </div>
-                <div class="sloganContainer">
-                    <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
+                <div class="typewriterContainer">
+                    <h2>
+                        <Typewriter 
+                            options={{
+                                strings: ['Educate. Elevate. Excel.'],
+                                autoStart: true,
+                                loop: true,
+                            }}                
+                        />
+                    </h2>
                 </div>
             </div>
           );
