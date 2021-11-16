@@ -20,7 +20,7 @@ export function capitalizeFirstLetter(string) {
       let db, tx, store;
       request.onupgradeneeded = function(e) {
         const db = request.result;
-        db.createObjectStore('products', { keyPath: '_id' });
+        db.createObjectStore('questions', { keyPath: '_id' });
         db.createObjectStore('categories', { keyPath: '_id' });
       };
   

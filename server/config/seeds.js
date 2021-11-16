@@ -220,6 +220,10 @@ db.once('open', async () => {
   ]);
 
   console.log('questions seeded');
+  
+  let seeds = await questions 
+  console.log(seeds)
+
 
   await User.deleteMany();
 

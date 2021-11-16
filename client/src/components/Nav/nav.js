@@ -23,6 +23,7 @@ function NavBar() {
 
     useEffect(() => {
         if (categoryData) {
+            console.log(categoryData)
         dispatch({
             type: UPDATE_CATEGORIES,
             categories: categoryData.categories
@@ -52,10 +53,10 @@ function NavBar() {
         if (Auth.loggedIn()) {
           return (
               <div>
-                    <div class="navBarContainer">
+                    <div className="navBarContainer">
                         <Navbar expand="lg">
                             <Container fluid>
-                                <div class="navBarLogo">
+                                <div className="navBarLogo">
                                     <Navbar.Brand as={ Link } to={"/"}><img src={logoImage} className="d-inline-block align-top" width="60" height="60" alt="Home" /></Navbar.Brand>
                                 </div>
                                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -82,7 +83,7 @@ function NavBar() {
                             </Container>
                         </Navbar>
                     </div>
-                    <div class="sloganContainer">
+                    <div className="sloganContainer">
                         <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
                     </div>
               </div>
@@ -90,10 +91,10 @@ function NavBar() {
         } else {
           return (
             <div>
-                <div class="navBarContainer">
+                <div className="navBarContainer">
                     <Navbar expand="lg">
                         <Container fluid>
-                            <div class="navBarLogo">
+                            <div className="navBarLogo">
                                 <Navbar.Brand as={ Link } to={"/"}><img src={logoImage} className="d-inline-block align-top" width="60" height="60" alt="Home" /></Navbar.Brand>
                             </div>
                             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -117,7 +118,7 @@ function NavBar() {
                         </Container>
                     </Navbar>
                 </div>
-                <div class="sloganContainer">
+                <div className="sloganContainer">
                     <img src={logoGif} alt='' style={{ maxHeight: '30px' }}/>
                 </div>
             </div>

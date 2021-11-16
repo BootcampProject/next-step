@@ -6,11 +6,11 @@ import './assets/footer.css';
 function Footer () {
 
     return (
-        <div class="footerNavbarBackground">
+        <div className="footerNavbarBackground">
             <Container>
                 <Row>
                     <Col sm={4}> <ContactForm /> </Col>
-                    <Col class="footerLinks">
+                    <Col className="footerLinks">
                         <Nav className="flex-column text-center">
                             <Nav.Link href="/aboutus">About Us</Nav.Link>
                         </Nav>
