@@ -12,3 +12,7 @@
   --lightb: #bdbbb0;
   --darkb: #8a897c;
 }
+
+main {
+  max-height: 800px;
+}

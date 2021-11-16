@@ -41,8 +41,9 @@ function App() {
                 <Route exact path="/questions/:id" component={Detail} />
                 <Route exact path="/aboutus" component={AboutUs} />
               </Switch>
-            </main>
             <Footer />
+            </main>
+            
         </QuizQuestions>
         
       </Router>

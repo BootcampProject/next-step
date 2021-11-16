@@ -8,7 +8,7 @@ import { idbPromise } from '../../utils/helpers';
 import logoImage from './assets/images/Logo.png';
 import { Navbar,Nav,Container } from 'react-bootstrap';
 import { BsPersonPlusFill,BsPersonCheckFill } from 'react-icons/bs'; 
-import Typewriter from 'typewriter-effect';
+// import Typewriter from 'typewriter-effect';
 import './assets/css/nav.css';
 import Auth from "../../utils/auth";
 
@@ -82,17 +82,6 @@ function NavBar() {
                             </Container>
                         </Navbar>
                     </div>
-                    <div class="typewriterContainer">
-                        <h2>
-                            <Typewriter 
-                                options={{
-                                    strings: ['Educate. Elevate. Excel.'],
-                                    autoStart: true,
-                                    loop: true,
-                                }}                
-                            />
-                        </h2>
-                    </div>
               </div>
           );
         } else {
@@ -124,17 +113,6 @@ function NavBar() {
                             </Navbar.Collapse>
                         </Container>
                     </Navbar>
-                </div>
-                <div class="typewriterContainer">
-                    <h2>
-                        <Typewriter 
-                            options={{
-                                strings: ['Educate. Elevate. Excel.'],
-                                autoStart: true,
-                                loop: true,
-                            }}                
-                        />
-                    </h2>
                 </div>
             </div>
           );
