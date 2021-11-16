@@ -31,7 +31,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-    
         <QuizQuestions>
             <NavBar />
             <main>

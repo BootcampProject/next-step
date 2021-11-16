@@ -1,3 +1,8 @@
+.headerAbout {
+    text-align: center;
+    padding-top: 30px;
+}
+
 .cardContainerAbout {
     justify-content: center;
     text-align: center;
