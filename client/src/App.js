@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
-import Home from "./pages/Home";
+import Home from "./pages/HomePage/Home";
 import Detail from "./pages/Details";
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -34,7 +34,7 @@ function App() {
           <QuizQuestions>
               <NavBar />
                 <Switch>
-                  {/* <Route exact path="/" component={Home} /> */}
+                  <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/signup" component={Signup} />
                   <Route exact path="/questions/:id" component={Detail} />
