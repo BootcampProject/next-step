@@ -1,0 +1,58 @@
+[
+  {
+    "ask": "Simplify this expression. 3(𝑥 + 9) =",
+
+    "category": 1,
+    "answer": "3𝑥 + 27"
+  },
+  {
+    "ask": "Find Mode and Rage of the Given Data. 8, 2, 5, 9, 1, 2",
+    "category": 1,
+    "answer": "Mode: 2, Range: 8"
+  },
+  {
+    "ask": "A number is chosen at random from 1 to 10. Find the probability of selecting number 4 or smaller numbers. _",
+    "category": 1,
+    "answer": "2/5"
+  },
+  {
+    "ask": "Simplify this expression. 𝑥 − 3 + 5 − 3𝑥 =",
+    "category": 1,
+    "answer": "−2𝑥 + 2"
+  },
+  {
+    "ask": " A stationery sold 12 pencils, 36 red pens, 44 blue pens, 12 notebooks, 18 erasers, 34 rulers and 32 color pencils. What are the Mode and Range for the stationery sells?",
+    "category": 1,
+    "answer": "Mode: 12, Range: 32"
+  },
+  {
+    "ask": "A number is chosen at random from 1 to 10. What is the probability of selecting a multiple of 3.",
+    "category": 1,
+    "answer": "3/10"
+  },
+  {
+    "ask": "Two complementary angles have equal measures. What is the measure of each angle?",
+    "category": 1,
+    "answer": "45°"
+  },
+  {
+    "ask": "Find the slope of the line. 𝑦 = 𝑥 − 1",
+    "category": 1,
+    "answer": "1"
+  },
+  {
+    "ask": "Find the slope of the line through each pair of points. (1, 1), (2, 3)",
+    "category": 1,
+    "answer": "2"
+  },
+  {
+    "ask": "Solve this equation. 2(𝑥 − 14) = 4",
+    "category": 1,
+    "answer": "16"
+  },
+  {
+    "ask": "Solve this equation. 2(3𝑥 − 14) = 4",
+    "category": 1,
+    "answer": "16/3"
+  }
+]

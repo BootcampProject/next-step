@@ -1,0 +1,47 @@
+[
+  {
+    "ask": "What presents as a safety hazard while working in the science laboratory? ",
+    "category": 2,
+    "answer": "Working Alone"
+  },
+  {
+    "ask": "What is the proper safety response to a trash-can fire in a lab?",
+    "category": 2,
+    "answer": "Use the appropriate fire extinguisher"
+  },
+  {
+    "ask": "A very large redwood tree is measured to be about 100 units tall. Which unit is the most appropriate to use?",
+    "category": 2,
+    "answer": "Meters"
+  },
+  {
+    "ask": "The fine lead used in mechanical pencils has a diameter of about",
+    "category": 2,
+    "answer": "0.5 millimeters"
+  },
+  {
+    "ask": "The most appropriate scientific units for measuring the volume of the liquid in the petri dish would be?",
+    "category": 2,
+    "answer": "Milliliters"
+  },
+  {
+    "ask": "Sandy heated 20 grams of liquid hydrogen peroxide until it was completely broken down into liquid water and oxygen gas. What is the total mass of water and oxygen that was produced?",
+    "category": 2,
+    "answer": "20 grams since no matter was added or removed"
+  },
+  {
+    "ask": "An experiment was preformed to test the effects of different types of fertilizers on the number of tomatoes produced by one type of tomato plant. What is the experimental (independent) variable in this investigation?",
+    "category": 2,
+    "answer": "Type of fertilizer"
+  },
+  {
+    "ask": "What is the original source of the energy released when fossil fuels are burned?",
+    "category": 2,
+    "answer": "Solar"
+  },
+  {
+    "ask": "List all terrestrial planets.",
+    "category": 2,
+    "answer": "Mercury, Venus, Earth, Mars"
+  }
+]
