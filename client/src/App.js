@@ -14,6 +14,7 @@ import GeographyQuestionList from "./components/QuizPages/geography";
 import MathQuestionList from "./components/QuizPages/math";
 import HistoryQuestionList from "./components/QuizPages/history";
 import ScienceQuestionList from "./components/QuizPages/science";
+import AddQuizQuestion from "./components/AddQuiz/addQuiz";
 
 import Home from "./components/HomePage/Home";
 import Detail from "./pages/Details";
@@ -53,6 +54,7 @@ function App() {
               <Route exact path="/math8" component={MathQuestionList} />
               <Route exact path="/history8" component={HistoryQuestionList} />
               <Route exact path="/science8" component={ScienceQuestionList} />
+              <Route exact path="/addQ" component={AddQuizQuestion} />
             </Switch>
             <Footer />
           </main>

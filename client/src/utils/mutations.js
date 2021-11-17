@@ -22,3 +22,17 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_NEWQUESTION = gql`
+  mutation newquestion($question: String!, $answer: String!) {
+    newquestion(question: $question, answer: $answer) {
+      token
+      user {
+        _id
+      }
+      category {
+        name
+      } 
+    }
+  }
+`;
