@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
+import QuestionList from './components/questions/questions'
+
 import Home from "./components/HomePage/Home";
 import Detail from "./pages/Details";
 import Login from './pages/Login';
@@ -17,7 +19,7 @@ import Signup from './pages/Signup';
 
 const client = new ApolloClient({
   request: (operation) => {
-    const token = localStorage.getQuestion('id_token')
+    const token = localStorage.getItem('id_token')
     operation.setContext({
       headers: {
         authorization: token ? `Bearer ${token}` : ''
@@ -40,6 +42,7 @@ function App() {
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/questions/:id" component={Detail} />
                 <Route exact path="/aboutus" component={AboutUs} />
+                <Route exact path="/categories" component={QuestionList} />
               </Switch>
             <Footer />
             </main>

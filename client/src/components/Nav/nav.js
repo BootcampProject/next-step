@@ -8,7 +8,6 @@ import { idbPromise } from '../../utils/helpers';
 import logoImage from './assets/images/Logo.png';
 import { Navbar,Nav,Container } from 'react-bootstrap';
 import { BsPersonPlusFill,BsPersonCheckFill } from 'react-icons/bs'; 
-import logoGif from '../Header/assets/images/Ed-El-Ex-V2.gif';
 import './assets/css/nav.css';
 import Auth from "../../utils/auth";
 
@@ -63,14 +62,18 @@ function NavBar() {
                                 <Navbar.Collapse id="navbarScroll">
                                     <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '200px' }} navbarScroll>
                                         {categories.map(item => (
-                                            <Nav.Link 
+                                            <a
                                             key={item._id}
-                                            onClick={() => {
-                                              handleClick(item._id);
-                                            }}>
+                                            href="/categories"  onClick={() => {
+                                                handleClick(item._id);
+                                              }}
+                                           >
                                                 {item.name}
-                                            </Nav.Link>
+                                                
+                                            </a>
                                         ))}
+
+                                        {/* href={"/categories/"+item_id} */}
                                     </Nav>
                                     <Nav>
                                         <Nav.Link>
