@@ -9,30 +9,25 @@ function ScienceQuestionList() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="my-2">
-      <h2>Quiz Questions:</h2>
+    <div className="my-2 px-2 ">
+      <h2 className="center">Science Quiz Questions:</h2>
 
-      <div>
+      <div className="flex-row center">
         {questionsList.map((qscience) => (
-          <Card style={{ width: "20rem" }}>
+          <Card style={{ width: "20rem" }} className="mar">
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <Question
-                  id={qscience.id}
-                  ask={qscience.ask}
-                  // category={qscience.category}
-                  // key={qscience.category}
-                  // answer={qscience.answer}
-                />
+                <Question id={qscience.id} ask={qscience.ask} />
               </ListGroup.Item>
               <Button
                 onClick={() => setOpen(!open)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
+                className="my-1"
               >
                 Answer
               </Button>
-              <div style={{ minHeight: "150px" }}>
+              <div style={{ minHeight: "0px" }}>
                 <Collapse in={open} dimension="width">
                   <div id="example-collapse-text">
                     <Card body style={{ width: "20rem" }}>
