@@ -1,0 +1,25 @@
+:root {
+    --dark: #353535;
+    --light: #ffff;
+    --blu: #d2d7df;
+    --lightb: #bdbbb0;
+    --darkb: #8a897c;
+}
+
+.hero-wrapper {
+    background-color: var(--blu);
+    opacity: 0.6;
+}
+
+.hero {
+    background-image: url("./images/hero.jpg");
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+}

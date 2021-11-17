@@ -1,75 +1,173 @@
-import React from 'react';
-import logoImage from './assets/images/Logo.png';
-import { Navbar,Nav,Container,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
-import { BsSearch } from 'react-icons/bs';
-import logoGif from '../Header/assets/images/Ed-El-Ex-V2.gif';
-import './assets/css/nav.css';
-
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { useQuestionContext } from "../../utils/GlobalState";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+  UPDATE_CATEGORIES,
+  UPDATE_CURRENT_CATEGORY,
+} from "../../utils/actions";
+import { QUERY_CATEGORIES } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
 
+import logoImage from "./assets/images/Logo.png";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { BsPersonPlusFill, BsPersonCheckFill } from "react-icons/bs";
+import "./assets/css/nav.css";
+import Auth from "../../utils/auth";
+
+import { Link } from "react-router-dom";
 
 function NavBar() {
+  const [state, dispatch] = useQuestionContext();
 
-        return (
-            <Router>
-                <div class="navBarContainer">
-                    <Navbar expand="lg">
-                        <Container fluid>
-                            <div class="navBarLogo">
-                                <Navbar.Brand as={ Link } to={"/"}><img src={logoImage} className="d-inline-block align-top" width="60" height="60" alt="Home" /></Navbar.Brand>
-                            </div>
-                            <Navbar.Toggle aria-controls="navbarScroll" />
-                            <Navbar.Collapse id="navbarScroll">
-                                <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '200px' }} navbarScroll>
-                                    <Nav.Link as={ Link } to={"/about"}>Item 1</Nav.Link>
-                                    <Nav.Link as={ Link } to={"/about"}>Item 2</Nav.Link>
+  const { categories } = state;
 
-                                    <NavDropdown title="Item 3" id="navbarScrollingDropdown">
-                                        <NavDropdown.Item as={ Link } to={"/resume"}>Action</NavDropdown.Item>
-                                        <NavDropdown.Item as={ Link } to={"/resume"}>Another action</NavDropdown.Item>
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item as={ Link } to={"/resume"}>Something else here</NavDropdown.Item>
-                                    </NavDropdown>
-                                </Nav>
-                                <Form className="d-flex">
-                                    
-                                    <FormControl
-                                    type="search"
-                                    placeholder="Search"
-                                    className="me-2"
-                                    aria-label="Search"
-                                    />
-                                    <Button variant="outline-secondary"><BsSearch/></Button>
-                                </Form>
-                            </Navbar.Collapse>
-                        </Container>
-                    </Navbar>
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+
+  useEffect(() => {
+    if (categoryData) {
+      console.log(categoryData);
+      dispatch({
+        type: UPDATE_CATEGORIES,
+        categories: categoryData.categories,
+      });
+      categoryData.categories.forEach((category) => {
+        idbPromise("categories", "put", category);
+      });
+    } else if (!loading) {
+      idbPromise("categories", "get").then((categories) => {
+        dispatch({
+          type: UPDATE_CATEGORIES,
+          categories: categories,
+        });
+      });
+    }
+  }, [categoryData, loading, dispatch]);
+
+  const handleClick = (id) => {
+    dispatch({
+      type: UPDATE_CURRENT_CATEGORY,
+      currentCategory: id,
+    });
+  };
+
+  function showNavigation() {
+    if (Auth.loggedIn()) {
+      return (
+        <div>
+          <div className="navBarContainer">
+            <Navbar expand="lg">
+              <Container fluid>
+                <div className="navBarLogo">
+                  <Navbar.Brand as={Link} to={"/"}>
+                    <img
+                      src={logoImage}
+                      className="d-inline-block align-top"
+                      width="60"
+                      height="60"
+                      alt="Home"
+                    />
+                  </Navbar.Brand>
                 </div>
-                <div class="sloganContainer">
-                    <img src={logoGif} style={{ maxHeight: '30px' }}/>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                  <Nav
+                    className="me-auto my-2 my-lg-0"
+                    style={{ maxHeight: "200px" }}
+                    navbarScroll
+                  >
+                    <Nav.Link>
+                      <Link to="/geography8">Grade 8 Geography</Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                      <Link to="/math8">Grade 8 Math</Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                      <Link to="/history8">Grade 8 History</Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                      <Link to="/science8">Grade 8 Science</Link>
+                    </Nav.Link>
+                    {/* {categories.map(item => (
+                                            <a
+                                            key={item._id}
+                                            href="/categories"  onClick={() => {
+                                                handleClick(item._id);
+                                              }}
+                                           >
+                                                {item.name}
+                                                
+                                            </a>
+                                        ))} */}
+
+                    {/* href={"/categories/"+item_id} */}
+                  </Nav>
+                  <Nav>
+                    <Nav.Link>
+                      <a href="/" onClick={() => Auth.logout()}>
+                        Logout
+                      </a>
+                    </Nav.Link>
+                  </Nav>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <div className="navBarContainer">
+            <Navbar expand="lg">
+              <Container fluid>
+                <div className="navBarLogo">
+                  <Navbar.Brand as={Link} to={"/"}>
+                    <img
+                      src={logoImage}
+                      className="d-inline-block align-top"
+                      width="60"
+                      height="60"
+                      alt="Home"
+                    />
+                  </Navbar.Brand>
                 </div>
-                {/* <div>
-                    <Switch>
-                        <Route path="/about">
-                            <About />
-                        </Route>
-                        <Route path="/portfolio">
-                            <Portfolio />
-                        </Route>
-                        <Route path="/resume">
-                            <Resume />
-                        </Route>
-                        <Route path="/contact">
-                            <Contact />
-                        </Route>
-                    </Switch>
-                </div> */}
-            </Router>
-        );
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                  <Nav
+                    className="me-auto my-2 my-lg-0"
+                    style={{ maxHeight: "200px" }}
+                    navbarScroll
+                  >
+                    {categories.map((item) => (
+                      <Nav.Link
+                        key={item._id}
+                        onClick={() => {
+                          handleClick(item._id);
+                        }}
+                      >
+                        {item.name}
+                      </Nav.Link>
+                    ))}
+                  </Nav>
+                  <Nav>
+                    <Link to="/signup">
+                      {" "}
+                      <BsPersonPlusFill /> Signup
+                    </Link>
+                    <Link to="/login">
+                      {" "}
+                      <BsPersonCheckFill /> Login
+                    </Link>
+                  </Nav>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
+          </div>
+        </div>
+      );
+    }
+  }
+
+  return <div>{showNavigation()}</div>;
 }
 export default NavBar;
