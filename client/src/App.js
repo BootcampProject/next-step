@@ -2,6 +2,7 @@ import NavBar from './components/Nav/nav';
 import React from 'react';
 import Footer from './components/Footer/footer';
 import AboutUs from './components/AboutUs/About';
+import QuestionList from './components/questions/questions';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { QuizQuestions } from "./utils/GlobalState";
 import './App.css';
@@ -41,6 +42,7 @@ function App() {
                 <Route exact path="/questions/:id" component={Detail} />
                 <Route exact path="/aboutus" component={AboutUs} />
               </Switch>
+            <QuestionList />
             <Footer />
             </main>
             
