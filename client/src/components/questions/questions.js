@@ -1,65 +1,69 @@
-import React, { useEffect } from "react";
-import Question from "../answers/answers";
-import { useQuestionContext } from "../../utils/GlobalState";
-import { UPDATE_QUESTIONS } from "../../utils/actions";
-import { useQuery } from '@apollo/react-hooks';
-import { QUERY_QUESTIONS } from "../../utils/queries";
-import { idbPromise } from "../../utils/helpers";
+// import React, { useEffect, useState } from "react";
+// import Question from "../answers/answers";
+// // import { useQuestionContext } from "../../utils/GlobalState";
+// // import { UPDATE_QUESTIONS } from "../../utils/actions";
+// // import { useQuery } from "@apollo/react-hooks";
+// // import { QUERY_QUESTIONS } from "../../utils/queries";
+// // import { idbPromise } from "../../utils/helpers";
+// import qgeography from "../../questions.json";
 
-function QuestionList() {
-  const [state, dispatch] = useQuestionContext();
+// function QuestionList() {
+//   // const [state, dispatch] = useQuestionContext();
+//   const [questionsList, setQuestionsList] = useState(questions);
 
-  const { currentCategory } = state;
-  console.log(currentCategory,"WWE ARE HERE!")
+//   // const { currentCategory } = state;
+//   // console.log(currentCategory, "WWE ARE HERE!");
 
-  const { loading, data } = useQuery(QUERY_QUESTIONS);
+//   // const { loading, data } = useQuery(QUERY_QUESTIONS);
 
-  useEffect(() => {
-    if(data) {
-      dispatch({
-           type: UPDATE_QUESTIONS,
-          questions: data.questions
-        });
-        data.questions.forEach((question) => {
-          idbPromise('questions', 'put', question);
-        });
-    } else if (!loading) {
-      idbPromise('questions', 'get').then((questions) => {
-        dispatch({
-          type: UPDATE_QUESTIONS,
-         questions: questions
-       });
-      });
-    }
-  }, [data, loading, dispatch]);
+//   // useEffect(() => {
+//   //   if (data) {
+//   //     dispatch({
+//   //       type: UPDATE_QUESTIONS,
+//   //       questions: data.questions,
+//   //     });
+//   //     data.questions.forEach((question) => {
+//   //       idbPromise("questions", "put", question);
+//   //     });
+//   //   } else if (!loading) {
+//   //     idbPromise("questions", "get").then((questions) => {
+//   //       dispatch({
+//   //         type: UPDATE_QUESTIONS,
+//   //         questions: questions,
+//   //       });
+//   //     });
+//   //   }
+//   // }, [data, loading, dispatch]);
 
-  function filterQuestions() {
-    if (!currentCategory) {
-      return state.questions;
-    }
-    
-    return state.questions.filter(question => question.category._id === currentCategory);
-  }
+//   // function filterQuestions() {
+//   //   if (!currentCategory) {
+//   //     return state.questions;
+//   //   }
+//   //   // const filterQuestions = (currentCategory) => {
+//   //   //   (state) => question.category._id !== id;
+//   //   // };
 
-  return (
-    <div className="my-2">
-      <h2>Quiz Questions:</h2>
-      {state.questions.length ? (
-        <div className="flex-row">
-            {filterQuestions().map(question => (
-                <Question
-                  key= {question._id}
-                  _id={question._id}
-                  question={question.question}
-                  question={question.answer}
-                />
-            ))}
-        </div>
-      ) : (
-        <h3>No Questions</h3>
-      )}
-    </div>
-  );
-}
+//   //   return state.questions.filter(
+//   //     (question) => question.category._id === currentCategory
+//   //   );
+//   // }
 
-export default QuestionList;
+//   return (
+//     <div className="my-2">
+//       <h2>Quiz Questions:</h2>
+
+//       <div className="flex-row">
+//         {questionsList.map((questions) => (
+//           <Question
+//             ask={questions.ask}
+//             category={questions.category}
+//             key={questions.category}
+//             question={questions.answer}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default QuestionList;
