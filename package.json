@@ -4,6 +4,7 @@
     "description": "",
     "main": "server/server.js",
     "scripts": {
+      "prestart": "cd server && npm run seed",
       "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
       "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
       "start:prod": "cd server && npm start",
