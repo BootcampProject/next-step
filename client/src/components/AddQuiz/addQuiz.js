@@ -12,6 +12,7 @@ function AddQuizQuestion(props) {
 
   const handleFormSubmit = async event => {
     event.preventDefault();
+    window.alert("Thank you. Your new question will be taken under advisement and review.");
     console.log(formState.question)
     
     try {
