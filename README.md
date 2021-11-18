@@ -42,7 +42,7 @@ The purpose of Next Step is to create a supplemental learning platform where you
 * Deployed via: Heroku
 
 ## Screenshot
-![NextStep](./public/images/)
+![NextStep](./screenshot.PNG)
 
 ## Submition Requirements
 * URL of the deployed application: 
