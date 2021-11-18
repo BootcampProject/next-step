@@ -31,14 +31,26 @@ The purpose of Next Step is to create a supplemental learning platform where you
 
 ## Technologies Used
 * Dependencies include:
-    * bcrypt: ^5.0.1
-    * dotenv: ^10.0.0
-    * express: ^4.17.1
-    * express-session: ^1.17.2
-    * nodemon: 
-    * graphql: 
-    * react:
-    * react-bootstrap
+     "@apollo/react-hooks": "^3.1.5",
+      "@stripe/stripe-js": "^1.20.3",
+      "@testing-library/jest-dom": "^4.2.4",
+      "@testing-library/react": "^9.5.0",
+      "@testing-library/user-event": "^7.2.1",
+      "apollo-boost": "^0.4.9",
+      "apollo-link-context": "^1.0.20",
+      "bootstrap": "^5.1.1",
+      "graphql": "^14.7.0",
+      "graphql-tag": "^2.12.5",
+      "jwt-decode": "^2.2.0",
+      "react": "^16.14.0",
+      "react-bootstrap": "^2.0.0-rc.1",
+      "react-dom": "^16.14.0",
+      "react-icons": "^4.3.1",
+      "react-router": "^6.0.2",
+      "react-router-dom": "^4.3.1",
+      "react-scripts": "^3.4.1",
+      "react-transition-group": "^4.4.2",
+      "styled-components": "^5.3.3"
 * Deployed via: Heroku
 
 ## Screenshot
