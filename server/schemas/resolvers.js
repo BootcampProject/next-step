@@ -46,6 +46,24 @@ const resolvers = {
 
       return { token, user };
     },
+
+    newquestion: async (parent, args) => {
+      let question = '';
+      try {
+        question = await Questions.create(args);
+      }
+      catch (err) {
+        console.log(err)
+      }
+     
+      console.log(question)
+      const token = signToken(question);
+
+      return { token, question };
+
+    },
+
+
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });

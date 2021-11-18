@@ -1,10 +1,10 @@
 
 import { Form, Button, Card } from 'react-bootstrap';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_NEWQUESTION } from "../../utils/mutations";
-
+import Auth from "../../utils/auth";
 
 function AddQuizQuestion(props) {
   const [formState, setFormState] = useState({ question: '', answer: '' });
@@ -12,35 +12,46 @@ function AddQuizQuestion(props) {
 
   const handleFormSubmit = async event => {
     event.preventDefault();
-    const mutationResponse = await addquestion({
-      variables: {
-        question: formState.question, answer: formState.answer,
-      }
-    });
-    const token = mutationResponse.data.addquestion.token;
+    console.log(formState.question)
+    
+    try {
+        const mutationResponse = await addquestion({
+            variables: {
+              question: formState.question, answer: formState.answer, category: formState.category,
+            }
+          });
+          console.log(mutationResponse)
+          const token = mutationResponse.data.newquestion.token;
+          Auth.login(token);
+    } catch (err){console.log(err)}
   };
 
   const handleChange = event => {
-    const { name, value } = event.target;
+    const { dataname, value, id } = event.target;
+    console.log(id)
     setFormState({
       ...formState,
-      [name]: value
+      [id]: value
     });
   };
+
+  useEffect (() => {
+    console.log(formState)
+}, [formState])
 
     return (
         <div>
             <Card style={{ width: '18rem' }}>
                 <Form onSubmit={handleFormSubmit}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Group className="mb-3" controlId="question">
                         <Form.Label>Question:</Form.Label>
                         <Form.Control as="textarea" rows={3} onChange={handleChange} />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Group className="mb-3" controlId="answer">
                         <Form.Label>Answer:</Form.Label>
                         <Form.Control as="textarea" rows={3} onChange={handleChange} />
                     </Form.Group>
-                    <Form.Select aria-label="Select a Category">
+                    <Form.Select aria-label="Select a Category" onChange={handleChange} id="category">
                         <option>Open this select menu</option>
                         <option value="1">Grade 8 Geography</option>
                         <option value="2">Grade 8 Math</option>
