@@ -7,7 +7,7 @@ function Header(){
 
     return (
         <div>
-            <p class="sloganContainer" className="text-left mt-4 mb-4"><img src={logoGif} alt='' style={{ maxHeight: '30px' }}/></p>
+            <p className="sloganContainer" className="text-left mt-4 mb-4"><img src={logoGif} style={{ maxHeight: '30px' }}/></p>
         </div>
     )
         

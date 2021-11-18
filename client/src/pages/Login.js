@@ -38,7 +38,7 @@ function Login(props) {
             </Link>
           </Button>
 
-          <h2>Signup</h2>
+          <h2>LOGIN</h2>
 
         <Form onSubmit={handleFormSubmit}>
 

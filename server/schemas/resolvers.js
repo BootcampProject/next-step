@@ -7,7 +7,7 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    questions: async (parent, { category, question }) => {
+    Questions: async (parent, { category, question }) => {
       const params = {};
 
       if (category) {
@@ -22,9 +22,10 @@ const resolvers = {
 
       return await Questions.find(params).populate('category');
     },
-    Questions: async (parent, { _id }) => {
-      return await Questions.findById(_id).populate('category');
-    },
+    // question: async (parent, { _id }) => {
+    //   return await Question.findById(_id).populate('category');
+    // },
+   
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -45,6 +46,24 @@ const resolvers = {
 
       return { token, user };
     },
+
+    newquestion: async (parent, args) => {
+      let question = '';
+      try {
+        question = await Questions.create(args);
+      }
+      catch (err) {
+        console.log(err)
+      }
+     
+      console.log(question)
+      const token = signToken(question);
+
+      return { token, question };
+
+    },
+
+
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });

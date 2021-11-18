@@ -13,9 +13,9 @@ The purpose of Next Step is to create a supplemental learning platform where you
 
 ## User Story
 * AS an ELEMENTARY SCHOOL STUDENT
-  * I WANT to have access to additional learning materials/resources
-  * SO THAT I can choose how I would like to learn and maximize my learning experience.
-
+  * I WANT to have access to learning materials for various courses
+  * SO THAT I can learn more and practice for upcoming school tests and assignments.
+  
 ## Acceptance Criteria
 * GIVEN my desire to search for learning resources
 * WHEN I view the homepage of the application
@@ -23,11 +23,11 @@ The purpose of Next Step is to create a supplemental learning platform where you
 * WHEN I sign up
   * THEN I must complete the form
 * WHEN I am taken to my account page
-  * THEN I can search for learning material in both book and visual/audio formats
-* WHEN I see a book or video I like
-* THEN I can save it to my dashboard
-  * WHEN I am done with the book or video
-* THEN I can delete it from my dashboard
+  * THEN I can search for learning material by course category
+* WHEN I select a course
+  * THEN I am taken to it's associated questions
+* WHEN I select a question
+  * THEN I can view the answer to that question
 
 ## Technologies Used
 * Dependencies include:

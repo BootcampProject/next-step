@@ -1,0 +1,45 @@
+.headerAbout {
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  .cardContainerAbout {
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .whatwedo {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .flex-item {
+    text-align: center;
+  }
+  .flex-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .mar {
+    margin: 30px 30px 30px 30px;
+  }
+  
+  .aboutHero {
+    background-image: url(./images/aboutheader.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

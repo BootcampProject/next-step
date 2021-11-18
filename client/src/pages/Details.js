@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { useParams } from "react-router";
 import { useQuery } from '@apollo/react-hooks';
 
 import { useQuestionContext } from "../utils/GlobalState";
 import {UPDATE_QUESTIONS} from "../utils/actions";
 import { QUERY_QUESTIONS } from "../utils/queries";
-
 import { idbPromise } from "../utils/helpers";
 
 function Detail() {
@@ -16,7 +16,7 @@ function Detail() {
 
   const { loading, data } = useQuery(QUERY_QUESTIONS);
 
-  const { questions } = state;
+  const { questions} = state;
 
   useEffect(() => {
     // already in global store
