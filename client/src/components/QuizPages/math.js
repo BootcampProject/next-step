@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
 
-import image from "./images/Math2.jpg";
+import image from "./images/Math.png";
 import Question from "../answers/answers";
 import qmath from "../../qmath.json";
 

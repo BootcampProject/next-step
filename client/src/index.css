@@ -29,15 +29,3 @@ code {
 .mar {
   margin: 30px 30px 30px 30px;
 }
-.background {
-  background-image: url("./components/QuizPages/images/History.jpg");
-  display: flex;
-  flex-wrap: wrap;
-  height: 600px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: relative;
-  justify-content: center;
-  align-content: center;
-}

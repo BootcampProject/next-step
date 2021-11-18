@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
 
-import image from "./images/Science2.jpg";
+import image from "./images/Science.png";
 import Question from "../answers/answers";
 import qscience from "../../qscience.json";
 

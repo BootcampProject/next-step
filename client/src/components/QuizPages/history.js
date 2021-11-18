@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
 import Question from "../answers/answers";
 import qhistory from "../../qhistory.json";
-import image from "./images/History.jpg";
+import image from "./images/History.png";
 
 function HistoryQuestionList() {
   const [questionsList, setQuestionsList] = useState(qhistory);
