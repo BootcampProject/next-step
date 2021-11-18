@@ -41,8 +41,8 @@ function AddQuizQuestion(props) {
 }, [formState])
 
     return (
-        <div>
-            <Card style={{ width: '18rem' }}>
+        <div style={{ padding: '20px' }}>
+            <Card >
                 <Form onSubmit={handleFormSubmit}>
                     <Form.Group className="mb-3" controlId="question">
                         <Form.Label>Question:</Form.Label>
