@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Question from "../answers/answers";
 import qgeography from "../../qgeography.json";
-import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
+import { Card, Button, Collapse, ListGroup } from "react-bootstrap";
 function GeographyQuestionList() {
   const [questionsList, setQuestionsList] = useState(qgeography);
   const [open, setOpen] = useState(false);
