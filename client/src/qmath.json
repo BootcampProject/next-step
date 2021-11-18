@@ -11,7 +11,7 @@
     "answer": "Mode: 2, Range: 8"
   },
   {
-    "ask": "A number is chosen at random from 1 to 10. Find the probability of selecting number 4 or smaller numbers. _",
+    "ask": "A number is chosen at random from 1 to 10. Find the probability of selecting number 4 or smaller numbers.",
     "category": 1,
     "answer": "2/5"
   },
