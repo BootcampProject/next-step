@@ -5,15 +5,16 @@ import "./about.css";
 
 const AboutUs = () => {
   return (
-    <div>
-      <h2 className="headerAbout">About Us</h2>
-      <p className="whatwedo">
-        The purpose of Next Step is to create a supplemental learning platform
-        where youth at various elementary, middle and high school levels can
-        better prepare themselves in their courses and maximize their learning
-        experience.
-      </p>
-
+    <div about>
+      <div className="aboutHero">
+        <h2 className="headerAbout ">About Us</h2>
+        <p className="whatwedo">
+          The purpose of Next Step is to create a supplemental learning platform
+          where youth at various elementary, middle and high school levels can
+          better prepare themselves in their courses and maximize their learning
+          experience.
+        </p>
+      </div>
       <div className="cardContainerAbout center flex-row flex-container mar">
         <Row xs={1} md={2} className="g-4">
           <Card

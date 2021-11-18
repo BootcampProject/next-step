@@ -37,3 +37,9 @@
 .mar {
   margin: 30px 30px 30px 30px;
 }
+
+.aboutHero {
+  background-image: url(./images/aboutheader.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
