@@ -76,16 +76,36 @@ function NavBar() {
                                         navbarScroll
                                     >
                                         <Nav.Link>
-                                            <Link to="/geography8">Grade 8 Geography</Link>
+                                            <Link
+                                                to="/geography8"
+                                                style={{ textDecoration: "none ", color: "black" }}
+                                            >
+                                                Grade 8 Geography
+                                            </Link>
                                         </Nav.Link>
                                         <Nav.Link>
-                                            <Link to="/math8">Grade 8 Math</Link>
+                                            <Link
+                                                to="/math8"
+                                                style={{ textDecoration: "none", color: "black" }}
+                                            >
+                                                Grade 8 Math
+                                            </Link>
                                         </Nav.Link>
                                         <Nav.Link>
-                                            <Link to="/history8">Grade 8 History</Link>
+                                            <Link
+                                                to="/history8"
+                                                style={{ textDecoration: "none", color: "black" }}
+                                            >
+                                                Grade 8 History
+                                            </Link>
                                         </Nav.Link>
                                         <Nav.Link>
-                                            <Link to="/science8">Grade 8 Science</Link>
+                                            <Link
+                                                to="/science8"
+                                                style={{ textDecoration: "none", color: "black" }}
+                                            >
+                                                Grade 8 Science
+                                            </Link>
                                         </Nav.Link>
                                         {/* {categories.map(item => (
                                             <a
@@ -103,10 +123,14 @@ function NavBar() {
                                     </Nav>
                                     <Nav>
                                         <Nav.Link>
-                                            <Link to="/addQ"> <BsFillPencilFill /> Add Question</Link>
+                                            <Link to="/addQ" style={{ textDecoration: "none", color: "black" }}> <BsFillPencilFill /> Add Question</Link>
                                         </Nav.Link>
                                         <Nav.Link>
-                                            <a href="/" onClick={() => Auth.logout()}>
+                                            <a
+                                                href="/"
+                                                onClick={() => Auth.logout()}
+                                                style={{ textDecoration: "none", color: "black" }}
+                                            >
                                                 Logout
                                             </a>
                                         </Nav.Link>
@@ -153,11 +177,25 @@ function NavBar() {
                                         ))}
                                     </Nav>
                                     <Nav>
-                                        <Link to="/signup">
+                                        <Link
+                                            to="/signup"
+                                            style={{
+                                                textDecoration: "none",
+                                                color: "black",
+                                                paddingRight: "20px",
+                                            }}
+                                        >
                                             {" "}
                                             <BsPersonPlusFill /> Signup
                                         </Link>
-                                        <Link to="/login">
+                                        <Link
+                                            to="/login"
+                                            style={{
+                                                textDecoration: "none",
+                                                color: "black",
+                                                paddingRight: "20px",
+                                            }}
+                                        >
                                             {" "}
                                             <BsPersonCheckFill /> Login
                                         </Link>
