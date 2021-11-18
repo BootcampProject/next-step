@@ -9,7 +9,14 @@ function GeographyQuestionList() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="my-2 px-2" style={{ backgroundImage: `url(${image})` }}>
+    <div
+      className="my-2 px-2"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <h2 className="center">Geography Quiz Questions:</h2>
       <div></div>
 

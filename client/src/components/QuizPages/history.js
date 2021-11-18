@@ -9,7 +9,14 @@ function HistoryQuestionList() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="my-2 px-2" style={{ backgroundImage: `url(${image})` }}>
+    <div
+      className="my-2 px-2"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <h2 className="center">History Quiz Questions:</h2>
 
       <div className="center flex-row ">

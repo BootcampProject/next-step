@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
 
-import image from "./images/Math.jpeg";
+import image from "./images/Math2.jpg";
 import Question from "../answers/answers";
 import qmath from "../../qmath.json";
 
@@ -10,8 +10,17 @@ function MathQuestionList() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="my-2 px-2" style={{ backgroundImage: `url(${image})` }}>
-      <h2 className="center">Math Quiz Questions:</h2>
+    <div
+      className="my-2 px-2"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <h2 className="center" style={{ color: "white" }}>
+        Math Quiz Questions:
+      </h2>
 
       <div className="center flex-row  ">
         {questionsList.map((qmath) => (
