@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
 
+import image from "./images/Science2.jpg";
 import Question from "../answers/answers";
 import qscience from "../../qscience.json";
 
@@ -9,8 +10,17 @@ function ScienceQuestionList() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="my-2 px-2 ">
-      <h2 className="center">Science Quiz Questions:</h2>
+    <div
+      className="my-2 px-2 "
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <h2 className="center" style={{ color: "white" }}>
+        Science Quiz Questions:
+      </h2>
 
       <div className="flex-row center">
         {questionsList.map((qscience) => (

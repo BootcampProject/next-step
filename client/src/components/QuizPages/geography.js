@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Question from "../answers/answers";
 import qgeography from "../../qgeography.json";
+import image from "./images/Geography.jpg";
 
 import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
 function GeographyQuestionList() {
@@ -8,7 +9,7 @@ function GeographyQuestionList() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="my-2 px-2">
+    <div className="my-2 px-2" style={{ backgroundImage: `url(${image})` }}>
       <h2 className="center">Geography Quiz Questions:</h2>
       <div></div>
 
