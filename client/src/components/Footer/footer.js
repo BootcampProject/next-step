@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav,Container,Row,Col } from 'react-bootstrap';
 import ContactForm from '../ContactUs/contact';
 import './assets/footer.css';
+import { Link } from "react-router-dom";
 
 function Footer () {
 
