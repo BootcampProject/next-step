@@ -2,9 +2,6 @@
     "name": "next-step",
     "version": "1.0.0",
     "description": "",
-    "engines": {
-      "node": ">14.17.4"
-    },
     "main": "server/server.js",
     "scripts": {
       "prestart": "cd server && npm run seed",
