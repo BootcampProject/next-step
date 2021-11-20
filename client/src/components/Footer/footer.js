@@ -15,11 +15,13 @@ function Footer () {
             </Col>
             <Col className="footerLinks">
               <Nav className="flex-column text-center">
-                <Nav.Link
+                <Nav.Link>
+                <Link
                   href="/aboutus"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   About Us
+                  </Link>
                 </Nav.Link>
               </Nav>
             </Col>
