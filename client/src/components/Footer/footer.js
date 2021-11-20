@@ -18,7 +18,7 @@ function Footer () {
               <Nav className="flex-column text-center">
                 <Nav.Link>
                 <Link
-                  href="/aboutus"
+                  to="/aboutus"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   About Us
