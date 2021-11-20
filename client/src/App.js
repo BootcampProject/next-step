@@ -20,6 +20,7 @@ import Home from "./components/HomePage/Home";
 import Detail from "./pages/Details";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import AboutUs from "./components/AboutUs/About";
 
 const client = new ApolloClient({
   request: (operation) => {
