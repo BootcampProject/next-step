@@ -1,6 +1,9 @@
 {
     "name": "next-step",
     "version": "0.1.0",
+    "engines": {
+        "node": "16.13.0"
+      },
     "private": true,
     "proxy": "http://localhost:3001/",
     "dependencies": {
