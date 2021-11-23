@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
+import { FlashcardComponent } from "../../Flashcard";
+import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
+
 import Question from "../answers/answers";
 import qgeography from "../../qgeography.json";
 import image from "./images/Geography.png";
+import qgeographyflash from "../../qgeographyflash.json";
 
-import { Row, Col, Card, Button, Collapse, ListGroup } from "react-bootstrap";
 function GeographyQuestionList() {
   const [questionsList, setQuestionsList] = useState(qgeography);
   const [open, setOpen] = useState(false);
@@ -18,8 +21,9 @@ function GeographyQuestionList() {
       }}
     >
       <h2 className="center ">Geography Quiz Questions:</h2>
+      <FlashcardComponent dataSource={qgeographyflash} />
 
-      <div className="center flex-row  ">
+      {/* <div className="center flex-row  ">
         {questionsList.map((qgeography) => (
           <Card style={{ width: "20rem", Opacity: "140%" }} className="mar">
             <ListGroup variant="flush">
@@ -47,7 +51,7 @@ function GeographyQuestionList() {
             </ListGroup>
           </Card>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,0 +1,64 @@
+[
+  {
+    "front": {
+      "text": "Here will lie the question. click anywhere on the card to view the answer"
+    },
+    "back": { "text": "Here will lie the answer" }
+  },
+  {
+    "front": {
+      "text": "Which country is responsible for the largest share of U.S. exports?"
+    },
+    "back": {
+      "text": "Canada"
+    }
+  },
+  {
+    "front": {
+      "text": "Where is Iqaluit?"
+    },
+    "back": {
+      "text": "Nunavut"
+    }
+  },
+  {
+    "front": {
+      "text": "Canada has ten provinces. Two have no coastline on any oceans. Alberta is one of them. Which is the other one?"
+    },
+    "back": {
+      "text": "Saskatchewan"
+    }
+  },
+  {
+    "front": { "text": "What continent is Canada located in?" },
+    "back": { "text": "North America" }
+  },
+  {
+    "front": { "text": "What is the most eastern Canadian province?" },
+    "back": { "text": "Newfoundland and Labrador" }
+  },
+  {
+    "front": { "text": "Where is Surrey?" },
+    "back": { "text": "British Columbia" }
+  },
+  {
+    "front": {
+      "text": "In what province can you find Brandon, Flin Flon, and the Polar Bear Capital of the World, Churchill?"
+    },
+    "back": { "text": "Manitoba" }
+  },
+  {
+    "front": {
+      "text": "Why is the province of Prince Edward Island nicknamed Spud Island?"
+    },
+    "back": { "text": "Its famous for its potatoes, also known as spuds." }
+  },
+  {
+    "front": { "text": "Which province speaks mostly French?" },
+    "back": { "text": "Quebec" }
+  },
+  {
+    "front": { "text": "How many provinces are there in Canada?" },
+    "back": { "text": "10, but if you add the territories there are 13." }
+  }
+]
