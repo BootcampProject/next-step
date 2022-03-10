@@ -56,6 +56,6 @@ The purpose of Next Step is to create a supplemental learning platform where you
 ## Screenshot
 ![NextStep](./screenshot.PNG)
 
-## Submition Requirements
+## Submssion Requirements
 * URL of the deployed application: https://next-setp-uoft-project3.herokuapp.com/
 * URL of the GitHub repository: https://github.com/BootcampProject/next-step.git)
